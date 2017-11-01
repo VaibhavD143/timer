@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/png" href="logo.png" width="50px" height="100px" />
+
+<title>Coming Soon Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="cscss1.css">
+<link rel="stylesheet" href="csfont.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url('csbg.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+	opacity:1.2;
+}
+.timer{
+	    font-family: Trebuchet MS;
+		font-size:65px;		
+		
+}
+#hrs2{
+	padding:15px;
+	margin:0px;
+
+		
+}
+#min2
+{
+	padding:15px;
+		margin:0px;
+		
+}
+#sec2{
+	
+	padding:15px;
+		margin:0px;
+	
+		
+}
+.timer_ref{
+	background-color:#f2f2f2;
+	color:black;
+	border-radius:10px;
+	padding:5px 12px 5px 12px;
+	font-weight:Bold;
+	}
+a:hover{
+	color:#ff471a;
+}
+</style>
+</head>
+<body>
+
+<div class="spinner-wrapper">
+	<div class="spinner">
+		<div class="cube1"></div>
+		<div class="cube2"></div>
+	</div>
+</div>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white x" >
+  
+  <div class="w3-display-topleft  w3-padding-large w3-xlarge">
+    <a href="./../felicific.html" style="text-decoration:none;">
+	<img class="w3-animate-top" src="logo.png" width="85px" height="110px" style="padding:10px;animation-duration:2s;position:relative;left:520px;" >
+	</a>
+  </div>
+  <div>
+  
+  <h1 class="w3-jumbo w3-animate-top" style="margin-left:40%;margin-top:0%;padding-top:20px;animation-duration:2s;"><a href="./../felicific.html" style="text-decoration:none;">Felicific '17</a></h1>
+  
+  </div>
+  
+  <div class="w3-display-middle" style="width:70%">
+	
+    <h1 class="w3-jumbo w3-animate-top" style="padding-left:300px;animation-duration:2s;">COMING SOON</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    
+	<div>
+		<table style="width:100%;margin-left:31px;">
+			<tr class="timer">
+				<th id="day2" ></th>
+				<th id="hrs2"></th> 
+				<th id="min2"></th>
+				<th id="sec2" style="color:#ff471a;"></th>
+			</tr>
+			<tr style="text-align:center;">
+				<td ><span class="timer_ref">DAY</span></td>
+				<td ><span class="timer_ref">HOURS</span></td>
+				<td ><span class="timer_ref">MINUTES</span></td>
+				<td ><span class="timer_ref" style="color:#ff471a;">SECONDS</span></td>
+			</tr>
+  
+		</table>
+	</div>
+	
+  </div>
+	
+</div>
+<script>
+setInterval(myfun,1000);
+
+function myfun(){
+
+	var d = new Date(2017,11,7,23,59,59,0);
+	var d2 = new Date();
+	var secs=(d.getSeconds() - d2.getSeconds());
+	var mins=(d.getMinutes() - d2.getMinutes() );
+	var hrs=(d.getHours() - d2.getHours() );
+	var days=(d-d2)/(1000*60*60*24);
+	if(secs<10)
+	{	
+		
+	}
+	
+	document.getElementById("sec2").innerHTML = secs ;
+	document.getElementById("min2").innerHTML = Math.floor(mins) ;
+	document.getElementById("hrs2").innerHTML = Math.floor(hrs) ;
+	document.getElementById("day2").innerHTML = Math.floor(days) ;
+}
+</script>
+
+<script>
+$(document).ready(function(){
+	//Preloader
+
+	//	alert("in1");
+		function hidePreloader() {
+	//	alert("in");
+			setTimeout(function(){$('.spinner-wrapper').fadeOut();},1200);
+		}
+		hidePreloader();
+	});
+	
+	/*
+	$(window).load(function(){
+	alert("in");
+	});
+});
+*/
+</script>
+
+</body>
+</html>
